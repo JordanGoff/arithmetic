@@ -9,7 +9,31 @@ def clear():
 
 def addition(a, b):
     """Execute the addition program."""
-    print("addition")
+    while True:
+        # Get the numbers and answer for the problem.
+        num1 = randint(a, b)
+        num2 = randint(a, b)
+        answer = str(num1 + num2)
+
+        # Get the guess from the user.
+        guess = input(f"{num1} + {num2} = ")
+        clear()
+
+        # Let the user go back.
+        if guess == "":
+            break
+
+        print(f"{num1} + {num2} = {answer}")
+
+        # Check the guess to the answer.
+        if guess == answer:
+            print("Correct!")
+        else:
+            print("Incorrect!")
+        
+        # Observe the results.
+        input()
+        clear()
 
 
 def subtraction(a, b):
