@@ -73,8 +73,11 @@ def multiplication(num1, num2):
 
 def division(num1, num2):
     """Execute the division program."""
-    answer = str(num1 // num2) + " r " + str(num1 % num2)
-    return (answer, "/")
+    try:
+        answer = str(num1 // num2) + " r " + str(num1 % num2)
+        return (answer, "/")
+    except:
+        return ("undefined", "/")
 
 
 def main():
