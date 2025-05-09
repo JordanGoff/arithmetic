@@ -26,8 +26,10 @@ def compute(a, b, operation):
         else:
             return None
         
+        question = f"{num1} {opp} {num2} = "
+        
         # Get the guess from the user.
-        guess = input(f"{num1} {opp} {num2} = ")
+        guess = input(question)
         clear()
 
         # Check if the user wants to go back.
@@ -35,7 +37,7 @@ def compute(a, b, operation):
             return None
         
         # Show the answer.
-        print(f"{num1} {opp} {num2} = {answer}")
+        print(f"{question}{answer}")
 
         # Check if the guess is correct.
         if guess == answer:
