@@ -1,2 +1,2 @@
 # arithmetic
-Practice for addition, subtraction, and multiplication.
+Practice for addition, subtraction, multiplication, and division.
