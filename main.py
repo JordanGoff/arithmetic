@@ -1,3 +1,5 @@
+# Practice for addition, subtraction, multiplication, and division.
+
 from random import randint
 import os
 
@@ -10,7 +12,7 @@ def clear():
 def compute(a, b, operation):
     """Run the main program."""
     while True:
-        # Get numbers for the problem.
+        # Get the numbers for the problem.
         num1 = randint(a, b)
         num2 = randint(a, b)
 
