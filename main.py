@@ -42,9 +42,9 @@ def compute(a, b, operation):
 
         # Check if the guess is correct.
         if guess == answer:
-            print("Correct!")
+            print("\033[32mCorrect!\033[0m")
         else:
-            print("Incorrect!")
+            print("\033[31mIncorrect!\033[0m")
         
         # Observe the correct answer.
         input()
