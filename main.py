@@ -29,6 +29,7 @@ def addition(a, b):
         if guess == "":
             break
 
+        # Check if the guess is a string.
         try:
             guess = float(guess)
         except:
@@ -67,6 +68,7 @@ def subtraction(a, b):
         if guess == "":
             break
 
+        # Check if the guess is a string.
         try:
             guess = float(guess)
         except:
@@ -105,6 +107,7 @@ def multiplication(a, b):
         if guess == "":
             break
 
+        # Check if the guess is a string.
         try:
             guess = float(guess)
         except:
@@ -214,6 +217,7 @@ def main():
             except:
                 continue
         
+        # Go back to the minimum number.
         if b == "":
             continue
 
