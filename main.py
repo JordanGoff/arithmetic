@@ -26,6 +26,7 @@ def compute(a, b, operation):
         else:
             return None
         
+        # Write the question.
         question = f"{num1} {opp} {num2} = "
         
         # Get the guess from the user.
