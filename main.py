@@ -9,75 +9,152 @@ def clear():
     os.system("cls")
 
 
-def compute(a, b, operation):
-    """Run the main program."""
+def rounded(x):
+    """Round x to the nearest tenth."""
+    return round(10 * x) / 10
+
+
+def addition(a, b):
+    """Run the addition program."""
     while True:
-        # Get the numbers for the problem.
+        # Get the answer and obtain the guess from the user.
         num1 = randint(a, b)
         num2 = randint(a, b)
-
-        # Get the answer for the problem.
-        if operation == "1":
-            (answer, opp) = addition(num1, num2)
-        elif operation == "2":
-            (answer, opp) = subtraction(num1, num2)
-        elif operation == "3":
-            (answer, opp) = multiplication(num1, num2)
-        elif operation == "4":
-            (answer, opp) = division(num1, num2)
-        else:
-            return None
-        
-        # Write the question.
-        question = f"{num1} {opp} {num2} = "
-        
-        # Get the guess from the user.
+        question = f"{num1} + {num2} = "
+        answer = str(num1 + num2)
         guess = input(question)
         clear()
 
         # Check if the user wants to go back.
         if guess == "":
-            return None
-        
-        # Show the answer.
+            break
+
+        # Print the answer.
         print(f"{question}{answer}")
 
-        # Check if the guess is correct.
+        # Display if the user is correct or incorrect.
         if guess == answer:
             print("\033[32mCorrect!\033[0m")
         else:
             print("\033[31mIncorrect!\033[0m")
         
-        # Observe the correct answer.
+        # Wait for user input.
         input()
         clear()
 
 
-def addition(num1, num2):
-    """Execute the addition program."""
-    answer = str(num1 + num2)
-    return (answer, "+")
+def subtraction(a, b):
+    """Run the subtraction program."""
+    while True:
+        # Get the answer and obtain the guess from the user.
+        num1 = randint(a, b)
+        num2 = randint(a, b)
+        question = f"{num1} - {num2} = "
+        answer = str(num1 - num2)
+        guess = input(question)
+        clear()
+
+        # Check if the user wants to go back.
+        if guess == "":
+            break
+
+        # Print the answer.
+        print(f"{question}{answer}")
+
+        # Display if the user is correct or incorrect.
+        if guess == answer:
+            print("\033[32mCorrect!\033[0m")
+        else:
+            print("\033[31mIncorrect!\033[0m")
+        
+        # Wait for user input.
+        input()
+        clear()
 
 
-def subtraction(num1, num2):
-    """Execute the subtraction program."""
-    answer = str(num1 - num2)
-    return (answer, "-")
+def multiplication(a, b):
+    """Run the multiplication program."""
+    while True:
+        # Get the answer and obtain the guess from the user.
+        num1 = randint(a, b)
+        num2 = randint(a, b)
+        question = f"{num1} * {num2} = "
+        answer = str(num1 * num2)
+        guess = input(question)
+        clear()
+
+        # Check if the user wants to go back.
+        if guess == "":
+            break
+
+        # Print the answer.
+        print(f"{question}{answer}")
+
+        # Display if the user is correct or incorrect.
+        if guess == answer:
+            print("\033[32mCorrect!\033[0m")
+        else:
+            print("\033[31mIncorrect!\033[0m")
+        
+        # Wait for user input.
+        input()
+        clear()
 
 
-def multiplication(num1, num2):
-    """Execute the multiplication program."""
-    answer = str(num1 * num2)
-    return (answer, "*")
+def division(a, b):
+    """Run the division program."""
+    while True:
+        # Obtain the guess from the user.
+        num1 = randint(a, b)
+        num2 = randint(a, b)
+        question = f"{num1} / {num2} = "
+        guess = input(question)
+        clear()
 
+        # Check if the user wants to go back.
+        if guess == "":
+            break
 
-def division(num1, num2):
-    """Execute the division program."""
-    try:
-        answer = str(num1 // num2) + " r " + str(num1 % num2)
-        return (answer, "/")
-    except:
-        return ("undefined", "/")
+        # Perform the appropriate division problem.
+        # Indeterminate.
+        if num1 == 0 and num2 == 0:
+            answer = "Indeterminate"
+            print(f"{question}{answer}")
+            if guess.lower() == answer.lower():
+                print("\033[32mCorrect!\033[0m")
+            else:
+                print("\033[31mIncorrect!\033[0m")
+        # Undefined.
+        elif num2 == 0:
+            answer = "Undefined"
+            print(f"{question}{answer}")
+            if guess.lower() == answer.lower():
+                print("\033[32mCorrect!\033[0m")
+            else:
+                print("\033[31mIncorrect!\033[0m")
+        # Not indeterminate or undefined.
+        else:
+            # Decimal.
+            try:
+                answer = rounded(num1 / num2)
+                guess = rounded(float(guess))
+                print(f"{question}{answer}")
+                if guess == answer:
+                    print("\033[32mCorrect!\033[0m")
+                else:
+                    print("\033[31mIncorrect!\033[0m")
+            # Quotient and remainder.
+            except:
+                answer = str(num1 // num2) + " r " + str(num1 % num2)
+                print(f"{question}{answer}")
+                if guess.replace(" ", "") == answer.replace(" ", ""):
+                    print("\033[32mCorrect!\033[0m")
+                else:
+                    print("\033[31mIncorrect!\033[0m")
+
+        # Wait for user input.
+        input()
+        clear()
 
 
 def main():
@@ -106,8 +183,15 @@ def main():
             operation = input("Input: ")
             clear()
 
-            # Run the main program.
-            compute(a, b, operation)
+            # Run the operation program
+            if operation == "1":
+                addition(a, b)
+            elif operation == "2":
+                subtraction(a, b)
+            elif operation == "3":
+                multiplication(a, b)
+            elif operation == "4":
+                division(a, b)
 
 
 main()
