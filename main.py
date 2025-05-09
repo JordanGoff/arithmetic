@@ -21,13 +21,22 @@ def addition(a, b):
         num1 = randint(a, b)
         num2 = randint(a, b)
         question = f"{num1} + {num2} = "
-        answer = str(num1 + num2)
+        answer = num1 + num2
         guess = input(question)
         clear()
 
         # Check if the user wants to go back.
         if guess == "":
             break
+
+        try:
+            guess = float(guess)
+        except:
+            print(f"{question}{answer}")
+            print("\033[31mIncorrect!\033[0m")
+            input()
+            clear()
+            continue
 
         # Print the answer.
         print(f"{question}{answer}")
@@ -50,13 +59,22 @@ def subtraction(a, b):
         num1 = randint(a, b)
         num2 = randint(a, b)
         question = f"{num1} - {num2} = "
-        answer = str(num1 - num2)
+        answer = num1 - num2
         guess = input(question)
         clear()
 
         # Check if the user wants to go back.
         if guess == "":
             break
+
+        try:
+            guess = float(guess)
+        except:
+            print(f"{question}{answer}")
+            print("\033[31mIncorrect!\033[0m")
+            input()
+            clear()
+            continue
 
         # Print the answer.
         print(f"{question}{answer}")
@@ -79,13 +97,22 @@ def multiplication(a, b):
         num1 = randint(a, b)
         num2 = randint(a, b)
         question = f"{num1} * {num2} = "
-        answer = str(num1 * num2)
+        answer = num1 * num2
         guess = input(question)
         clear()
 
         # Check if the user wants to go back.
         if guess == "":
             break
+
+        try:
+            guess = float(guess)
+        except:
+            print(f"{question}{answer}")
+            print("\033[31mIncorrect!\033[0m")
+            input()
+            clear()
+            continue
 
         # Print the answer.
         print(f"{question}{answer}")
@@ -161,15 +188,34 @@ def main():
     """Execute the program."""
     clear()
 
-    # Choose a lower bound and upper bound.
     while True:
-        try:
-            a = int(input("Minimum: "))
-            b = int(input("Maximum: "))
+        # Choose the minimum number.
+        while True:
+            a = input("Minimum: ")
             clear()
-        except:
+            if a == "":
+                return None
+            try:
+                a = int(a)
+                break
+            except:
+                continue
+        
+        # Choose the maximum number.
+        while True:
+            print(f"Minimum: {a}")
+            b = input("Maximum: ")
             clear()
-            break
+            if b == "":
+                break
+            try:
+                b = int(b)
+                break
+            except:
+                continue
+        
+        if b == "":
+            continue
 
         # Initialize the loop.
         operation = " "
