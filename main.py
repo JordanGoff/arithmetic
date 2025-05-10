@@ -187,6 +187,44 @@ def division(a, b):
         clear()
 
 
+def square(a, b):
+    """Run the square program."""
+    while True:
+        # Get the answer and obtain the guess from the user.
+        num = randint(a, b)
+        question = f"{num}² = "
+        answer = num ** 2
+        guess = input(question)
+        clear()
+
+        # Check if the user wants to go back.
+        if guess == "":
+            break
+
+        # Check if the guess is a string.
+        try:
+            guess = float(guess)
+        except:
+            print(f"{question}{answer}")
+            print("\033[31mIncorrect!\033[0m")
+            input()
+            clear()
+            continue
+
+        # Print the answer.
+        print(f"{question}{answer}")
+
+        # Display if the user is correct or incorrect.
+        if guess == answer:
+            print("\033[32mCorrect!\033[0m")
+        else:
+            print("\033[31mIncorrect!\033[0m")
+        
+        # Wait for user input.
+        input()
+        clear()
+
+
 def main():
     """Execute the program."""
     clear()
@@ -229,7 +267,8 @@ def main():
             print("(1) Addition")
             print("(2) Subtraction")
             print("(3) Multiplication")
-            print("(4) Division\n")
+            print("(4) Division")
+            print("(5) Square\n")
             operation = input("Input: ")
             clear()
 
@@ -242,6 +281,8 @@ def main():
                 multiplication(a, b)
             elif operation == "4":
                 division(a, b)
+            elif operation == "5":
+                square(a, b)
 
 
 main()
