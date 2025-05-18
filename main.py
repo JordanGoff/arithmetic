@@ -232,6 +232,7 @@ def calculator():
         expression = input()
         clear()
 
+        # Check if the user wants to go back.
         if expression == "":
             break
 
