@@ -225,6 +225,27 @@ def square(a, b):
         clear()
 
 
+def calculator():
+    """Run the calculator program."""
+    while True:
+        # Obtain the expression from the user.
+        expression = input()
+        clear()
+
+        if expression == "":
+            break
+
+        # Calculate the expression.
+        try:
+            answer = eval(expression)
+            print(f"{expression} = \033[32m{answer}\033[0m")
+            input()
+            clear()
+        except:
+            clear()
+            continue
+
+
 def main():
     """Execute the program."""
     clear()
@@ -268,7 +289,8 @@ def main():
             print("(2) Subtraction")
             print("(3) Multiplication")
             print("(4) Division")
-            print("(5) Square\n")
+            print("(5) Square")
+            print("(6) Calculator\n")
             operation = input("Input: ")
             clear()
 
@@ -283,6 +305,8 @@ def main():
                 division(a, b)
             elif operation == "5":
                 square(a, b)
+            elif operation == "6":
+                calculator()
 
 
 main()
