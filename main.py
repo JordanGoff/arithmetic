@@ -1,6 +1,7 @@
 # Practice for addition, subtraction, multiplication, and division.
 
 from random import randint
+from math import *
 import os
 
 
@@ -228,6 +229,8 @@ def square(a, b):
 def calculator():
     """Run the calculator program."""
     while True:
+        flag = False
+
         # Obtain the expression from the user.
         expression = input()
         clear()
@@ -236,9 +239,17 @@ def calculator():
         if expression == "":
             break
 
+        # Allow exponential calculations.
+        if "^" in expression:
+            expression_modified = expression.replace("^", "**")
+            flag = True
+
         # Calculate the expression.
         try:
-            answer = eval(expression)
+            if flag:
+                answer = eval(expression_modified)
+            else:
+                answer = eval(expression)
             print(f"{expression} = \033[32m{answer}\033[0m")
             input()
             clear()
