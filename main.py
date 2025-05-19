@@ -15,7 +15,7 @@ def rounded(x):
     return round(10 * x) / 10
 
 
-def addition(a, b):
+def addition(a, b, rand=False):
     """Run the addition program."""
     while True:
         # Get the answer and obtain the guess from the user.
@@ -28,7 +28,7 @@ def addition(a, b):
 
         # Check if the user wants to go back.
         if guess == "":
-            break
+            return True
 
         # Check if the guess is a string.
         try:
@@ -53,8 +53,12 @@ def addition(a, b):
         input()
         clear()
 
+        # Check if we should loop.
+        if rand == True:
+            break
 
-def subtraction(a, b):
+
+def subtraction(a, b, rand=False):
     """Run the subtraction program."""
     while True:
         # Get the answer and obtain the guess from the user.
@@ -67,7 +71,7 @@ def subtraction(a, b):
 
         # Check if the user wants to go back.
         if guess == "":
-            break
+            return True
 
         # Check if the guess is a string.
         try:
@@ -92,8 +96,12 @@ def subtraction(a, b):
         input()
         clear()
 
+        # Check if we should loop.
+        if rand == True:
+            break
 
-def multiplication(a, b):
+
+def multiplication(a, b, rand=False):
     """Run the multiplication program."""
     while True:
         # Get the answer and obtain the guess from the user.
@@ -106,7 +114,7 @@ def multiplication(a, b):
 
         # Check if the user wants to go back.
         if guess == "":
-            break
+            return True
 
         # Check if the guess is a string.
         try:
@@ -131,8 +139,12 @@ def multiplication(a, b):
         input()
         clear()
 
+        # Check if we should loop.
+        if rand == True:
+            break
 
-def division(a, b):
+
+def division(a, b, rand=False):
     """Run the division program."""
     while True:
         # Obtain the guess from the user.
@@ -144,7 +156,7 @@ def division(a, b):
 
         # Check if the user wants to go back.
         if guess == "":
-            break
+            return True
 
         # Perform the appropriate division problem.
         # Indeterminate.
@@ -187,8 +199,12 @@ def division(a, b):
         input()
         clear()
 
+        # Check if we should loop.
+        if rand == True:
+            break
 
-def square(a, b):
+
+def square(a, b, rand=False):
     """Run the square program."""
     while True:
         # Get the answer and obtain the guess from the user.
@@ -200,7 +216,7 @@ def square(a, b):
 
         # Check if the user wants to go back.
         if guess == "":
-            break
+            return True
 
         # Check if the guess is a string.
         try:
@@ -224,6 +240,10 @@ def square(a, b):
         # Wait for user input.
         input()
         clear()
+
+        # Check if we should loop.
+        if rand == True:
+            break
 
 
 def calculator():
@@ -421,6 +441,30 @@ def incremental_practice(a, b):
         incremental_square(a, b)
 
 
+def random_operator(a, b):
+    """Run the random_operator program."""
+    flag = None
+    
+    while True:
+        number = randint(1, 5)
+
+        # Choose a random operator.
+        if number == 1:
+            flag = addition(a, b, True)
+        elif number == 2:
+            flag = subtraction(a, b, True)
+        elif number == 3:
+            flag = multiplication(a, b, True)
+        elif number == 4:
+            flag = division(a, b, True)
+        else:
+            flag = square(a, b, True)
+        
+        # Check if the user wants to go back.
+        if flag:
+            break
+
+
 def main():
     """Execute the program."""
     clear()
@@ -456,35 +500,38 @@ def main():
             continue
 
         # Initialize the loop.
-        operation = " "
+        operator = " "
 
-        while operation != "":
-            # Choose an operation.
+        while operator != "":
+            # Choose an operator.
             print("(1) Addition")
             print("(2) Subtraction")
             print("(3) Multiplication")
             print("(4) Division")
             print("(5) Square")
             print("(6) Calculator")
-            print("(7) Incremental Practice\n")
-            operation = input("Input: ")
+            print("(7) Incremental Practice")
+            print("(8) Random Operator\n")
+            operator = input("Input: ")
             clear()
 
-            # Run the operation program
-            if operation == "1":
+            # Run the operator program.
+            if operator == "1":
                 addition(a, b)
-            elif operation == "2":
+            elif operator == "2":
                 subtraction(a, b)
-            elif operation == "3":
+            elif operator == "3":
                 multiplication(a, b)
-            elif operation == "4":
+            elif operator == "4":
                 division(a, b)
-            elif operation == "5":
+            elif operator == "5":
                 square(a, b)
-            elif operation == "6":
+            elif operator == "6":
                 calculator()
-            elif operation == "7":
+            elif operator == "7":
                 incremental_practice(a, b)
+            elif operator == "8":
+                random_operator(a, b)
 
 
 main()
