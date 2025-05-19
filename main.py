@@ -261,6 +261,7 @@ def incremental_addition(a, b):
     """Go over all the numbers from a to b."""
     for i in range(a, b + 1):
         for j in range(a, b + 1):
+            # Get the answer and obtain the guess from the user.
             question = f"{i} + {j} = "
             answer = i + j
             guess = input(question)
@@ -298,6 +299,7 @@ def incremental_subtraction(a, b):
     """Go over all the numbers from a to b."""
     for i in range(a, b + 1):
         for j in range(a, i + 1):
+            # Get the answer and obtain the guess from the user.
             question = f"{i} - {j} = "
             answer = i - j
             guess = input(question)
@@ -335,6 +337,7 @@ def incremental_multiplication(a, b):
     """Go over all the numbers from a to b."""
     for i in range(a, b + 1):
         for j in range(a, b + 1):
+            # Get the answer and obtain the guess from the user.
             question = f"{i} * {j} = "
             answer = i * j
             guess = input(question)
@@ -371,6 +374,7 @@ def incremental_multiplication(a, b):
 def incremental_square(a, b):
     """Go over all the numbers from a to b."""
     for i in range(a, b + 1):
+        # Get the answer and obtain the guess from the user.
         question = f"{i}² = "
         answer = i ** 2
         guess = input(question)
