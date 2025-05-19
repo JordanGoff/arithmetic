@@ -17,9 +17,25 @@ def rounded(x):
 
 def addition(a, b, constant=False):
     """Run the addition program."""
+    # Check if the first number should be constant.
+    if constant:
+        while True:
+            num1 = input("Constant: ")
+            if num1 == "":
+                clear()
+                return None
+            try:
+                num1 = int(num1)
+                clear()
+                break
+            except:
+                clear()
+                continue
+
     while True:
         # Get the answer and obtain the guess from the user.
-        num1 = randint(a, b)
+        if not constant:
+            num1 = randint(a, b)
         num2 = randint(a, b)
         question = f"{num1} + {num2} = "
         answer = num1 + num2
@@ -56,9 +72,25 @@ def addition(a, b, constant=False):
 
 def subtraction(a, b, constant=False):
     """Run the subtraction program."""
+    # Check if the first number should be constant.
+    if constant:
+        while True:
+            num1 = input("Constant: ")
+            if num1 == "":
+                clear()
+                return None
+            try:
+                num1 = int(num1)
+                clear()
+                break
+            except:
+                clear()
+                continue
+
     while True:
         # Get the answer and obtain the guess from the user.
-        num1 = randint(a, b)
+        if not constant:
+            num1 = randint(a, b)
         num2 = randint(a, b)
         question = f"{num1} - {num2} = "
         answer = num1 - num2
@@ -95,9 +127,25 @@ def subtraction(a, b, constant=False):
 
 def multiplication(a, b, constant=False):
     """Run the multiplication program."""
+    # Check if the first number should be constant.
+    if constant:
+        while True:
+            num1 = input("Constant: ")
+            if num1 == "":
+                clear()
+                return None
+            try:
+                num1 = int(num1)
+                clear()
+                break
+            except:
+                clear()
+                continue
+
     while True:
         # Get the answer and obtain the guess from the user.
-        num1 = randint(a, b)
+        if not constant:
+            num1 = randint(a, b)
         num2 = randint(a, b)
         question = f"{num1} * {num2} = "
         answer = num1 * num2
@@ -134,9 +182,25 @@ def multiplication(a, b, constant=False):
 
 def division(a, b, constant=False):
     """Run the division program."""
+    # Check if the first number should be constant.
+    if constant:
+        while True:
+            num1 = input("Constant: ")
+            if num1 == "":
+                clear()
+                return None
+            try:
+                num1 = int(num1)
+                clear()
+                break
+            except:
+                clear()
+                continue
+
     while True:
         # Obtain the guess from the user.
-        num1 = randint(a, b)
+        if not constant:
+            num1 = randint(a, b)
         num2 = randint(a, b)
         question = f"{num1} / {num2} = "
         guess = input(question)
@@ -309,8 +373,12 @@ def main():
             print("(2) Subtraction")
             print("(3) Multiplication")
             print("(4) Division")
-            print("(5) Square")
-            print("(6) Calculator\n")
+            print("(5) Addition Constant")
+            print("(6) Subtraction Constant")
+            print("(7) Multiplication Constant")
+            print("(8) Division Constant")
+            print("(9) Square")
+            print("(10) Calculator\n")
             operator = input("Input: ")
             clear()
 
@@ -324,8 +392,16 @@ def main():
             elif operator == "4":
                 division(a, b)
             elif operator == "5":
-                square(a, b)
+                addition(a, b, True)
             elif operator == "6":
+                subtraction(a, b, True)
+            elif operator == "7":
+                multiplication(a, b, True)
+            elif operator == "8":
+                division(a, b, True)
+            elif operator == "9":
+                square(a, b)
+            elif operator == "10":
                 calculator()
 
 
