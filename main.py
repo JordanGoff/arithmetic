@@ -15,7 +15,7 @@ def rounded(x):
     return round(10 * x) / 10
 
 
-def addition(a, b):
+def addition(a, b, constant=False):
     """Run the addition program."""
     while True:
         # Get the answer and obtain the guess from the user.
@@ -54,7 +54,7 @@ def addition(a, b):
         clear()
 
 
-def subtraction(a, b):
+def subtraction(a, b, constant=False):
     """Run the subtraction program."""
     while True:
         # Get the answer and obtain the guess from the user.
@@ -93,7 +93,7 @@ def subtraction(a, b):
         clear()
 
 
-def multiplication(a, b):
+def multiplication(a, b, constant=False):
     """Run the multiplication program."""
     while True:
         # Get the answer and obtain the guess from the user.
@@ -132,7 +132,7 @@ def multiplication(a, b):
         clear()
 
 
-def division(a, b):
+def division(a, b, constant=False):
     """Run the division program."""
     while True:
         # Obtain the guess from the user.
@@ -244,6 +244,15 @@ def calculator():
         if "^" in expression:
             expression_modified = expression.replace("^", "**")
             flag = True
+        
+        # Allow factorial calculations.
+        if "!" in expression:
+            try:
+                expression_modified = expression.replace("!", "")
+                expression_modified = str(factorial(int(expression_modified)))
+                flag = True
+            except:
+                continue
 
         # Calculate the expression.
         try:
