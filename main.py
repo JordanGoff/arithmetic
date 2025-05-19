@@ -452,7 +452,7 @@ def main():
                 continue
         
         # Go back to the minimum number.
-        if b == "":
+        if b == "" or a > b:
             continue
 
         # Initialize the loop.
