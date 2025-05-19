@@ -257,6 +257,166 @@ def calculator():
             continue
 
 
+def incremental_addition(a, b):
+    """Go over all the numbers from a to b."""
+    for i in range(a, b + 1):
+        for j in range(a, b + 1):
+            question = f"{i} + {j} = "
+            answer = i + j
+            guess = input(question)
+            clear()
+
+            # Check if the user wants to go back.
+            if guess == "":
+                return True
+            
+            # Check if the guess is a string.
+            try:
+                guess = float(guess)
+            except:
+                print(f"{question}{answer}")
+                print("\033[31mIncorrect!\033[0m")
+                input()
+                clear()
+                continue
+
+            # Print the answer.
+            print(f"{question}{answer}")
+
+            # Display if the user is correct or incorrect.
+            if guess == answer:
+                print("\033[32mCorrect!\033[0m")
+            else:
+                print("\033[31mIncorrect!\033[0m")
+
+            # Wait for user input.
+            input()
+            clear()
+
+
+def incremental_subtraction(a, b):
+    """Go over all the numbers from a to b."""
+    for i in range(a, b + 1):
+        for j in range(a, i + 1):
+            question = f"{i} - {j} = "
+            answer = i - j
+            guess = input(question)
+            clear()
+
+            # Check if the user wants to go back.
+            if guess == "":
+                return True
+            
+            # Check if the guess is a string.
+            try:
+                guess = float(guess)
+            except:
+                print(f"{question}{answer}")
+                print("\033[31mIncorrect!\033[0m")
+                input()
+                clear()
+                continue
+
+            # Print the answer.
+            print(f"{question}{answer}")
+
+            # Display if the user is correct or incorrect.
+            if guess == answer:
+                print("\033[32mCorrect!\033[0m")
+            else:
+                print("\033[31mIncorrect!\033[0m")
+
+            # Wait for user input.
+            input()
+            clear()
+
+
+def incremental_multiplication(a, b):
+    """Go over all the numbers from a to b."""
+    for i in range(a, b + 1):
+        for j in range(a, b + 1):
+            question = f"{i} * {j} = "
+            answer = i * j
+            guess = input(question)
+            clear()
+
+            # Check if the user wants to go back.
+            if guess == "":
+                return True
+            
+            # Check if the guess is a string.
+            try:
+                guess = float(guess)
+            except:
+                print(f"{question}{answer}")
+                print("\033[31mIncorrect!\033[0m")
+                input()
+                clear()
+                continue
+
+            # Print the answer.
+            print(f"{question}{answer}")
+
+            # Display if the user is correct or incorrect.
+            if guess == answer:
+                print("\033[32mCorrect!\033[0m")
+            else:
+                print("\033[31mIncorrect!\033[0m")
+
+            # Wait for user input.
+            input()
+            clear()
+
+
+def incremental_square(a, b):
+    """Go over all the numbers from a to b."""
+    for i in range(a, b + 1):
+        question = f"{i}² = "
+        answer = i ** 2
+        guess = input(question)
+        clear()
+
+        # Check if the user wants to go back.
+        if guess == "":
+            return True
+        
+        # Check if the guess is a string.
+        try:
+            guess = float(guess)
+        except:
+            print(f"{question}{answer}")
+            print("\033[31mIncorrect!\033[0m")
+            input()
+            clear()
+            continue
+
+        # Print the answer.
+        print(f"{question}{answer}")
+
+        # Display if the user is correct or incorrect.
+        if guess == answer:
+            print("\033[32mCorrect!\033[0m")
+        else:
+            print("\033[31mIncorrect!\033[0m")
+
+        # Wait for user input.
+        input()
+        clear()
+
+
+def incremental_practice(a, b):
+    """Run the incremental_practice program."""
+    flag = incremental_addition(a, b)
+
+    # Check if the user wants to go back.
+    if flag == None:
+        flag = incremental_subtraction(a, b)
+    if flag == None:
+        flag = incremental_multiplication(a, b)
+    if flag == None:
+        incremental_square(a, b)
+
+
 def main():
     """Execute the program."""
     clear()
@@ -301,7 +461,8 @@ def main():
             print("(3) Multiplication")
             print("(4) Division")
             print("(5) Square")
-            print("(6) Calculator\n")
+            print("(6) Calculator")
+            print("(7) Incremental Practice\n")
             operation = input("Input: ")
             clear()
 
@@ -318,6 +479,8 @@ def main():
                 square(a, b)
             elif operation == "6":
                 calculator()
+            elif operation == "7":
+                incremental_practice(a, b)
 
 
 main()
