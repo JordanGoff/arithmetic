@@ -28,7 +28,7 @@ def addition(a, b, rand=False):
 
         # Check if the user wants to go back.
         if guess == "":
-            return True
+            break
 
         # Check if the guess is a string.
         try:
@@ -52,10 +52,6 @@ def addition(a, b, rand=False):
         # Wait for user input.
         input()
         clear()
-
-        # Check if we should loop.
-        if rand == True:
-            break
 
 
 def subtraction(a, b, rand=False):
@@ -71,7 +67,7 @@ def subtraction(a, b, rand=False):
 
         # Check if the user wants to go back.
         if guess == "":
-            return True
+            break
 
         # Check if the guess is a string.
         try:
@@ -95,10 +91,6 @@ def subtraction(a, b, rand=False):
         # Wait for user input.
         input()
         clear()
-
-        # Check if we should loop.
-        if rand == True:
-            break
 
 
 def multiplication(a, b, rand=False):
@@ -114,7 +106,7 @@ def multiplication(a, b, rand=False):
 
         # Check if the user wants to go back.
         if guess == "":
-            return True
+            break
 
         # Check if the guess is a string.
         try:
@@ -139,10 +131,6 @@ def multiplication(a, b, rand=False):
         input()
         clear()
 
-        # Check if we should loop.
-        if rand == True:
-            break
-
 
 def division(a, b, rand=False):
     """Run the division program."""
@@ -156,7 +144,7 @@ def division(a, b, rand=False):
 
         # Check if the user wants to go back.
         if guess == "":
-            return True
+            break
 
         # Perform the appropriate division problem.
         # Indeterminate.
@@ -199,10 +187,6 @@ def division(a, b, rand=False):
         input()
         clear()
 
-        # Check if we should loop.
-        if rand == True:
-            break
-
 
 def square(a, b, rand=False):
     """Run the square program."""
@@ -216,7 +200,7 @@ def square(a, b, rand=False):
 
         # Check if the user wants to go back.
         if guess == "":
-            return True
+            break
 
         # Check if the guess is a string.
         try:
@@ -240,10 +224,6 @@ def square(a, b, rand=False):
         # Wait for user input.
         input()
         clear()
-
-        # Check if we should loop.
-        if rand == True:
-            break
 
 
 def calculator():
@@ -275,194 +255,6 @@ def calculator():
             input()
         except:
             continue
-
-
-def incremental_addition(a, b):
-    """Go over all the numbers from a to b."""
-    for i in range(a, b + 1):
-        for j in range(a, b + 1):
-            # Get the answer and obtain the guess from the user.
-            question = f"{i} + {j} = "
-            answer = i + j
-            guess = input(question)
-            clear()
-
-            # Check if the user wants to go back.
-            if guess == "":
-                return True
-            
-            # Check if the guess is a string.
-            try:
-                guess = float(guess)
-            except:
-                print(f"{question}{answer}")
-                print("\033[31mIncorrect!\033[0m")
-                input()
-                clear()
-                continue
-
-            # Print the answer.
-            print(f"{question}{answer}")
-
-            # Display if the user is correct or incorrect.
-            if guess == answer:
-                print("\033[32mCorrect!\033[0m")
-            else:
-                print("\033[31mIncorrect!\033[0m")
-
-            # Wait for user input.
-            input()
-            clear()
-
-
-def incremental_subtraction(a, b):
-    """Go over all the numbers from a to b."""
-    for i in range(a, b + 1):
-        for j in range(a, i + 1):
-            # Get the answer and obtain the guess from the user.
-            question = f"{i} - {j} = "
-            answer = i - j
-            guess = input(question)
-            clear()
-
-            # Check if the user wants to go back.
-            if guess == "":
-                return True
-            
-            # Check if the guess is a string.
-            try:
-                guess = float(guess)
-            except:
-                print(f"{question}{answer}")
-                print("\033[31mIncorrect!\033[0m")
-                input()
-                clear()
-                continue
-
-            # Print the answer.
-            print(f"{question}{answer}")
-
-            # Display if the user is correct or incorrect.
-            if guess == answer:
-                print("\033[32mCorrect!\033[0m")
-            else:
-                print("\033[31mIncorrect!\033[0m")
-
-            # Wait for user input.
-            input()
-            clear()
-
-
-def incremental_multiplication(a, b):
-    """Go over all the numbers from a to b."""
-    for i in range(a, b + 1):
-        for j in range(a, b + 1):
-            # Get the answer and obtain the guess from the user.
-            question = f"{i} * {j} = "
-            answer = i * j
-            guess = input(question)
-            clear()
-
-            # Check if the user wants to go back.
-            if guess == "":
-                return True
-            
-            # Check if the guess is a string.
-            try:
-                guess = float(guess)
-            except:
-                print(f"{question}{answer}")
-                print("\033[31mIncorrect!\033[0m")
-                input()
-                clear()
-                continue
-
-            # Print the answer.
-            print(f"{question}{answer}")
-
-            # Display if the user is correct or incorrect.
-            if guess == answer:
-                print("\033[32mCorrect!\033[0m")
-            else:
-                print("\033[31mIncorrect!\033[0m")
-
-            # Wait for user input.
-            input()
-            clear()
-
-
-def incremental_square(a, b):
-    """Go over all the numbers from a to b."""
-    for i in range(a, b + 1):
-        # Get the answer and obtain the guess from the user.
-        question = f"{i}² = "
-        answer = i ** 2
-        guess = input(question)
-        clear()
-
-        # Check if the user wants to go back.
-        if guess == "":
-            return True
-        
-        # Check if the guess is a string.
-        try:
-            guess = float(guess)
-        except:
-            print(f"{question}{answer}")
-            print("\033[31mIncorrect!\033[0m")
-            input()
-            clear()
-            continue
-
-        # Print the answer.
-        print(f"{question}{answer}")
-
-        # Display if the user is correct or incorrect.
-        if guess == answer:
-            print("\033[32mCorrect!\033[0m")
-        else:
-            print("\033[31mIncorrect!\033[0m")
-
-        # Wait for user input.
-        input()
-        clear()
-
-
-def incremental_practice(a, b):
-    """Run the incremental_practice program."""
-    flag = incremental_addition(a, b)
-
-    # Check if the user wants to go back.
-    if flag == None:
-        flag = incremental_subtraction(a, b)
-    if flag == None:
-        flag = incremental_multiplication(a, b)
-    if flag == None:
-        incremental_square(a, b)
-
-
-def random_operator(a, b):
-    """Run the random_operator program."""
-    flag = None
-    
-    while True:
-        number = randint(1, 5)
-
-        # Choose a random operator.
-        if number == 1:
-            flag = addition(a, b, True)
-        elif number == 2:
-            flag = subtraction(a, b, True)
-        elif number == 3:
-            flag = multiplication(a, b, True)
-        elif number == 4:
-            flag = division(a, b, True)
-        else:
-            flag = square(a, b, True)
-        
-        # Check if the user wants to go back.
-        if flag:
-            break
 
 
 def main():
@@ -509,9 +301,7 @@ def main():
             print("(3) Multiplication")
             print("(4) Division")
             print("(5) Square")
-            print("(6) Calculator")
-            print("(7) Incremental Practice")
-            print("(8) Random Operator\n")
+            print("(6) Calculator\n")
             operator = input("Input: ")
             clear()
 
@@ -528,10 +318,6 @@ def main():
                 square(a, b)
             elif operator == "6":
                 calculator()
-            elif operator == "7":
-                incremental_practice(a, b)
-            elif operator == "8":
-                random_operator(a, b)
 
 
 main()
