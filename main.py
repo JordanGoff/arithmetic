@@ -15,7 +15,7 @@ def rounded(x):
     return round(10 * x) / 10
 
 
-def addition(a, b, rand=False):
+def addition(a, b):
     """Run the addition program."""
     while True:
         # Get the answer and obtain the guess from the user.
@@ -54,7 +54,7 @@ def addition(a, b, rand=False):
         clear()
 
 
-def subtraction(a, b, rand=False):
+def subtraction(a, b):
     """Run the subtraction program."""
     while True:
         # Get the answer and obtain the guess from the user.
@@ -93,7 +93,7 @@ def subtraction(a, b, rand=False):
         clear()
 
 
-def multiplication(a, b, rand=False):
+def multiplication(a, b):
     """Run the multiplication program."""
     while True:
         # Get the answer and obtain the guess from the user.
@@ -132,7 +132,7 @@ def multiplication(a, b, rand=False):
         clear()
 
 
-def division(a, b, rand=False):
+def division(a, b):
     """Run the division program."""
     while True:
         # Obtain the guess from the user.
@@ -188,7 +188,7 @@ def division(a, b, rand=False):
         clear()
 
 
-def square(a, b, rand=False):
+def square(a, b):
     """Run the square program."""
     while True:
         # Get the answer and obtain the guess from the user.
