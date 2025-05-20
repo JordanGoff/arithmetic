@@ -294,14 +294,13 @@ def calculator():
     """Run the calculator program."""
     while True:
         flag = False
-        clear()
 
         # Obtain the expression from the user.
         expression = input()
-        clear()
 
         # Check if the user wants to go back.
         if expression == "":
+            clear()
             break
 
         # Allow exponential calculations.
@@ -324,8 +323,7 @@ def calculator():
                 answer = eval(expression_modified)
             else:
                 answer = eval(expression)
-            print(f"{expression} = \033[32m{answer}\033[0m")
-            input()
+            print(f"\033[32m{answer}\033[0m")
         except:
             continue
 
