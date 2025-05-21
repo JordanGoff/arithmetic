@@ -4,6 +4,9 @@ from random import randint
 from math import *
 import os
 
+# Variables for the calculator program.
+variables = dict()
+
 
 def clear():
     """Clear the screen."""
@@ -294,6 +297,7 @@ def calculator():
     """Run the calculator program."""
     while True:
         flag = False
+        flag2 = False
 
         # Obtain the expression from the user.
         expression = input()
@@ -303,27 +307,61 @@ def calculator():
             clear()
             break
 
-        # Allow exponential calculations.
-        if "^" in expression:
-            expression_modified = expression.replace("^", "**")
-            flag = True
-        
-        # Allow factorial calculations.
-        if "!" in expression:
+        # Define new variables.
+        if "=" in expression:
+            expression = expression.replace(" ", "")
+            place = expression.index("=")
+            variable = expression[:place]
+            value = expression[place + 1:]
+
+            # Does not allow variable names to be numbers.
             try:
-                expression_modified = expression.replace("!", "")
-                expression_modified = str(factorial(int(expression_modified)))
-                flag = True
+                float(variable)
+                continue
+            except:
+                pass
+
+            # Does not allow values to be strings.
+            try:
+                eval(value)
             except:
                 continue
 
-        # Calculate the expression.
+            # Input existing variables for the value.
+            for x in variables:
+                if x in value:
+                    value = value.replace(x, variables[x])
+            
+            # Define or replace variable.
+            variables[variable] = f"({value})"
+            expression = value
+            flag = True
+        else:
+            # Input existing variables for the value.
+            for x in variables:
+                if expression == x and expression != "ans":
+                    flag = True
+                if expression == "ans":
+                    flag2 = True
+                if x in expression:
+                    expression = expression.replace(x, variables[x])
+        
+        # Allow the user to enter powers.
+        if "^" in expression:
+            expression = expression.replace("^", "**")
+        
+        # Calculate and display the answer
         try:
+            answer = eval(expression)
             if flag:
-                answer = eval(expression_modified)
+                print(f"\033[32m{variable} = {answer}\033[0m")
+            elif flag2:
+                print(f"\033[32mans = {answer}\033[0m")
+                variables["ans"] = f"{expression}"
             else:
-                answer = eval(expression)
-            print(f"\033[32m{answer}\033[0m")
+                print(f"\033[32mans = {answer}\033[0m")
+                variables["ans"] = f"({expression})"
+            print(variables)
         except:
             continue
 
