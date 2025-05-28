@@ -313,84 +313,8 @@ def calculator():
             continue
 
 
-def incremental_addition(a, b):
-    """Run the incremental_addition program."""
-    # Loop through the numbers.
-    for i in range(a, b + 1):
-        for j in range(a, b + 1):
-            question = f"{i} + {j} = "
-            answer = i + j
-            guess = input(question)
-            clear()
-
-            # Check if the user wants to go back.
-            if guess == "":
-                return True
-            
-            # Check if the guess is a string.
-            try:
-                guess = float(guess)
-            except:
-                print(f"{question}{answer}")
-                print("\033[31mIncorrect!\033[0m")
-                input()
-                clear()
-                continue
-
-            # Print the answer.
-            print(f"{question}{answer}")
-
-            # Display if the user is correct or incorrect.
-            if guess == answer:
-                print("\033[32mCorrect!\033[0m")
-            else:
-                print("\033[31mIncorrect!\033[0m")
-            
-            # Wait for user input.
-            input()
-            clear()
-
-
-def incremental_subtraction(a, b):
-    """Run the incremental_subtraction program."""
-    # Loop through the numbers.
-    for i in range(a, b + 1):
-        for j in range(a, i + 1):
-            question = f"{i} - {j} = "
-            answer = i - j
-            guess = input(question)
-            clear()
-
-            # Check if the user wants to go back.
-            if guess == "":
-                return True
-            
-            # Check if the guess is a string.
-            try:
-                guess = float(guess)
-            except:
-                print(f"{question}{answer}")
-                print("\033[31mIncorrect!\033[0m")
-                input()
-                clear()
-                continue
-
-            # Print the answer.
-            print(f"{question}{answer}")
-
-            # Display if the user is correct or incorrect.
-            if guess == answer:
-                print("\033[32mCorrect!\033[0m")
-            else:
-                print("\033[31mIncorrect!\033[0m")
-            
-            # Wait for user input.
-            input()
-            clear()
-
-
-def incremental_multiplication(a, b):
-    """Run the incremental_multiplication program."""
+def incremental_practice(a, b):
+    """Run the incremental_practice program."""
     # Loop through the numbers.
     for i in range(a, b + 1):
         for j in range(a, b + 1):
@@ -401,7 +325,7 @@ def incremental_multiplication(a, b):
 
             # Check if the user wants to go back.
             if guess == "":
-                return True
+                return None
             
             # Check if the guess is a string.
             try:
@@ -425,54 +349,6 @@ def incremental_multiplication(a, b):
             # Wait for user input.
             input()
             clear()
-
-
-def incremental_square(a, b):
-    """Run the incremental_square program."""
-    # Loop through the numbers.
-    for i in range(a, b + 1):
-        question = f"{i}² = "
-        answer = i ** 2
-        guess = input(question)
-        clear()
-
-        # Check if the user wants to go back.
-        if guess == "":
-            return True
-        
-        # Check if the guess is a string.
-        try:
-            guess = float(guess)
-        except:
-            print(f"{question}{answer}")
-            print("\033[31mIncorrect!\033[0m")
-            input()
-            clear()
-            continue
-
-        # Print the answer.
-        print(f"{question}{answer}")
-
-        # Display if the user is correct or incorrect.
-        if guess == answer:
-            print("\033[32mCorrect!\033[0m")
-        else:
-            print("\033[31mIncorrect!\033[0m")
-        
-        # Wait for user input.
-        input()
-        clear()
-
-
-def incremental_practice(a, b):
-    """Run the incremental_practice program."""
-    flag = incremental_addition(a, b)
-    if not flag:
-        flag = incremental_subtraction(a, b)
-    if not flag:
-        flag = incremental_multiplication(a, b)
-    if not flag:
-        incremental_square(a, b)
 
 
 def main():
