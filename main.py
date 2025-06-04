@@ -202,7 +202,7 @@ def division(a, b, constant=False):
         if not constant:
             num1 = randint(a, b)
         num2 = randint(a, b)
-        question = f"{num1} / {num2} = "
+        question = f"{num1} ÷ {num2} = "
         guess = input(question)
         clear()
 
@@ -290,31 +290,84 @@ def square(a, b):
         clear()
 
 
-def calculator():
-    """Run the calculator program."""
-    while True:
-        # Obtain the expression from the user.
-        expression = input()
-
-        # Check if the user wants to go back.
-        if expression == "":
+def incremental_addition(a, b):
+    """Run the incremental_addition program."""
+    # Loop through the numbers.
+    for i in range(a, b + 1):
+        for j in range(a, b + 1):
+            question = f"{i} + {j} = "
+            answer = i + j
+            guess = input(question)
             clear()
-            break
 
-        # Allow the user to enter powers.
-        if "^" in expression:
-            expression = expression.replace("^", "**")
-        
-        # Calculate and display the answer
-        try:
-            answer = eval(expression)
-            print(f"\033[32m{answer}\033[0m")
-        except:
-            continue
+            # Check if the user wants to go back.
+            if guess == "":
+                return None
+            
+            # Check if the guess is a string.
+            try:
+                guess = float(guess)
+            except:
+                print(f"{question}{answer}")
+                print("\033[31mIncorrect!\033[0m")
+                input()
+                clear()
+                continue
+
+            # Print the answer.
+            print(f"{question}{answer}")
+
+            # Display if the user is correct or incorrect.
+            if guess == answer:
+                print("\033[32mCorrect!\033[0m")
+            else:
+                print("\033[31mIncorrect!\033[0m")
+            
+            # Wait for user input.
+            input()
+            clear()
 
 
-def incremental_practice(a, b):
-    """Run the incremental_practice program."""
+def incremental_subtraction(a, b):
+    """Run the incremental_subtraction program."""
+    # Loop through the numbers.
+    for i in range(a, b + 1):
+        for j in range(a, i + 1):
+            question = f"{i} - {j} = "
+            answer = i - j
+            guess = input(question)
+            clear()
+
+            # Check if the user wants to go back.
+            if guess == "":
+                return None
+            
+            # Check if the guess is a string.
+            try:
+                guess = float(guess)
+            except:
+                print(f"{question}{answer}")
+                print("\033[31mIncorrect!\033[0m")
+                input()
+                clear()
+                continue
+
+            # Print the answer.
+            print(f"{question}{answer}")
+
+            # Display if the user is correct or incorrect.
+            if guess == answer:
+                print("\033[32mCorrect!\033[0m")
+            else:
+                print("\033[31mIncorrect!\033[0m")
+            
+            # Wait for user input.
+            input()
+            clear()
+
+
+def incremental_multiplication(a, b):
+    """Run the incremental_multiplication program."""
     # Loop through the numbers.
     for i in range(a, b + 1):
         for j in range(a, b + 1):
@@ -349,6 +402,121 @@ def incremental_practice(a, b):
             # Wait for user input.
             input()
             clear()
+
+
+def incremental_division(a, b):
+    """Run the incremental_division program."""
+    # Loop through the numbers.
+    for i in range(a, b + 1):
+        for j in range(a, i + 1):
+            question = f"{i} ÷ {j} = "
+            guess = input(question)
+            clear()
+
+            # Check if the user wants to go back.
+            if guess == "":
+                return None
+            
+            # Perform the appropriate division problem.
+            # Indeterminate.
+            if i == 0 and j == 0:
+                answer = "Indeterminate"
+                print(f"{question}{answer}")
+                if guess.lower() == answer.lower():
+                    print("\033[32mCorrect!\033[0m")
+                else:
+                    print("\033[31mIncorrect!\033[0m")
+            # Undefined.
+            elif j == 0:
+                answer = "Undefined"
+                print(f"{question}{answer}")
+                if guess.lower() == answer.lower():
+                    print("\033[32mCorrect!\033[0m")
+                else:
+                    print("\033[31mIncorrect!\033[0m")
+            # Not indeterminate or undefined.
+            else:
+                # Decimal.
+                try:
+                    answer = rounded(i / j)
+                    guess = rounded(float(guess))
+                    print(f"{question}{answer}")
+                    if guess == answer:
+                        print("\033[32mCorrect!\033[0m")
+                    else:
+                        print("\033[31mIncorrect!\033[0m")
+                # Quotient and remainder.
+                except:
+                    answer = str(i // j) + " r " + str(i % j)
+                    print(f"{question}{answer}")
+                    if guess.replace(" ", "") == answer.replace(" ", ""):
+                        print("\033[32mCorrect!\033[0m")
+                    else:
+                        print("\033[31mIncorrect!\033[0m")
+
+            # Wait for user input.
+            input()
+            clear()
+
+
+def incremental_square(a, b):
+    """Run the incremental_square program."""
+    # Loop through the numbers.
+    for i in range(a, b + 1):
+        question = f"{i}² = "
+        answer = i ** 2
+        guess = input(question)
+        clear()
+
+        # Check if the user wants to go back.
+        if guess == "":
+            return None
+        
+        # Check if the guess is a string.
+        try:
+            guess = float(guess)
+        except:
+            print(f"{question}{answer}")
+            print("\033[31mIncorrect!\033[0m")
+            input()
+            clear()
+            continue
+
+        # Print the answer.
+        print(f"{question}{answer}")
+
+        # Display if the user is correct or incorrect.
+        if guess == answer:
+            print("\033[32mCorrect!\033[0m")
+        else:
+            print("\033[31mIncorrect!\033[0m")
+        
+        # Wait for user input.
+        input()
+        clear()
+
+
+def calculator():
+    """Run the calculator program."""
+    while True:
+        # Obtain the expression from the user.
+        expression = input()
+
+        # Check if the user wants to go back.
+        if expression == "":
+            clear()
+            break
+
+        # Allow the user to enter powers.
+        if "^" in expression:
+            expression = expression.replace("^", "**")
+        
+        # Calculate and display the answer
+        try:
+            answer = eval(expression)
+            print(f"\033[32m{answer}\033[0m")
+        except:
+            continue
 
 
 def main():
@@ -394,13 +562,17 @@ def main():
             print("(2) Subtraction")
             print("(3) Multiplication")
             print("(4) Division")
-            print("(5) Addition Constant")
-            print("(6) Subtraction Constant")
-            print("(7) Multiplication Constant")
-            print("(8) Division Constant")
-            print("(9) Square")
-            print("(10) Calculator")
-            print("(11) Incremental Practice\n")
+            print("(5) Square")
+            print("(6) Incremental Addition")
+            print("(7) Incremental Subtraction")
+            print("(8) Incremental Multiplication")
+            print("(9) Incremental Division")
+            print("(10) Incremental Square")
+            print("(11) Addition Constant")
+            print("(12) Subtraction Constant")
+            print("(13) Multiplication Constant")
+            print("(14) Division Constant")
+            print("(15) Calculator\n")
             operator = input("Input: ")
             clear()
 
@@ -414,19 +586,27 @@ def main():
             elif operator == "4":
                 division(a, b)
             elif operator == "5":
-                addition(a, b, True)
-            elif operator == "6":
-                subtraction(a, b, True)
-            elif operator == "7":
-                multiplication(a, b, True)
-            elif operator == "8":
-                division(a, b, True)
-            elif operator == "9":
                 square(a, b)
+            elif operator == "6":
+                incremental_addition(a, b)
+            elif operator == "7":
+                incremental_subtraction(a, b)
+            elif operator == "8":
+                incremental_multiplication(a, b)
+            elif operator == "9":
+                incremental_division(a, b)
             elif operator == "10":
-                calculator()
+                incremental_square(a, b)
             elif operator == "11":
-                incremental_practice(a, b)
+                addition(a, b, True)
+            elif operator == "12":
+                subtraction(a, b, True)
+            elif operator == "13":
+                multiplication(a, b, True)
+            elif operator == "14":
+                division(a, b, True)
+            elif operator == "15":
+                calculator()
 
 
 main()
