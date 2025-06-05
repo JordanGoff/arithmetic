@@ -301,8 +301,7 @@ def incremental_addition(a, b):
             numbers2.append(j)
             
     # Loop through the lists randomly.
-    length = len(numbers1)
-    for _ in range(length):
+    while numbers1 != []:
         length = len(numbers1)
         index = randint(0, length - 1)
         num1 = numbers1[index]
@@ -353,8 +352,7 @@ def incremental_subtraction(a, b):
             numbers2.append(j)
             
     # Loop through the lists randomly.
-    length = len(numbers1)
-    for _ in range(length):
+    while numbers1 != []:
         length = len(numbers1)
         index = randint(0, length - 1)
         num1 = numbers1[index]
@@ -405,8 +403,7 @@ def incremental_multiplication(a, b):
             numbers2.append(j)
             
     # Loop through the lists randomly.
-    length = len(numbers1)
-    for _ in range(length):
+    while numbers1 != []:
         length = len(numbers1)
         index = randint(0, length - 1)
         num1 = numbers1[index]
@@ -458,8 +455,7 @@ def incremental_division(a, b):
             numbers2.append(j)
             
     # Loop through the lists randomly.
-    length = len(numbers1)
-    for _ in range(length):
+    while numbers1 != []:
         length = len(numbers1)
         index = randint(0, length - 1)
         num1 = numbers1[index]
@@ -524,8 +520,7 @@ def incremental_square(a, b):
         numbers.append(i)
             
     # Loop through the lists randomly.
-    length = len(numbers)
-    for _ in range(length):
+    while numbers != []:
         length = len(numbers)
         index = randint(0, length - 1)
         num = numbers[index]
