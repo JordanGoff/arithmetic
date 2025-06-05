@@ -293,8 +293,8 @@ def square(a, b):
 def incremental_addition(a, b):
     """Run the incremental_addition program."""
     # Create lists of pairs of numbers.
-    numbers1 = list()
-    numbers2 = list()
+    numbers1 = []
+    numbers2 = []
     for i in range(a, b + 1):
         for j in range(a, b + 1):
             numbers1.append(i)
@@ -344,8 +344,8 @@ def incremental_addition(a, b):
 def incremental_subtraction(a, b):
     """Run the incremental_subtraction program."""
     # Create lists of pairs of numbers.
-    numbers1 = list()
-    numbers2 = list()
+    numbers1 = []
+    numbers2 = []
     for i in range(a, b + 1):
         for j in range(a, i + 1):
             numbers1.append(i)
@@ -395,8 +395,8 @@ def incremental_subtraction(a, b):
 def incremental_multiplication(a, b):
     """Run the incremental_multiplication program."""
     # Create lists of pairs of numbers.
-    numbers1 = list()
-    numbers2 = list()
+    numbers1 = []
+    numbers2 = []
     for i in range(a, b + 1):
         for j in range(a, b + 1):
             numbers1.append(i)
@@ -447,8 +447,8 @@ def incremental_division(a, b):
     """Run the incremental_division program."""
     # Loop through the numbers.
     # Create lists of pairs of numbers.
-    numbers1 = list()
-    numbers2 = list()
+    numbers1 = []
+    numbers2 = []
     for i in range(a, b + 1):
         for j in range(a, i + 1):
             numbers1.append(i)
@@ -515,7 +515,7 @@ def incremental_division(a, b):
 def incremental_square(a, b):
     """Run the incremental_square program."""
     # Create lists of pairs of numbers.
-    numbers = list()
+    numbers = []
     for i in range(a, b + 1):
         numbers.append(i)
             
