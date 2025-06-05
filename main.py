@@ -147,7 +147,7 @@ def multiplication(a, b, constant=False):
         if not constant:
             num1 = randint(a, b)
         num2 = randint(a, b)
-        question = f"{num1} * {num2} = "
+        question = f"{num1} × {num2} = "
         answer = num1 * num2
         guess = input(question)
         clear()
@@ -292,179 +292,246 @@ def square(a, b):
 
 def incremental_addition(a, b):
     """Run the incremental_addition program."""
-    # Loop through the numbers.
+    # Create lists of pairs of numbers.
+    numbers1 = list()
+    numbers2 = list()
     for i in range(a, b + 1):
         for j in range(a, b + 1):
-            question = f"{i} + {j} = "
-            answer = i + j
-            guess = input(question)
-            clear()
-
-            # Check if the user wants to go back.
-            if guess == "":
-                return None
+            numbers1.append(i)
+            numbers2.append(j)
             
-            # Check if the guess is a string.
-            try:
-                guess = float(guess)
-            except:
-                print(f"{question}{answer}")
-                print("\033[31mIncorrect!\033[0m")
-                input()
-                clear()
-                continue
+    # Loop through the lists randomly.
+    length = len(numbers1)
+    for _ in range(length):
+        length = len(numbers1)
+        index = randint(0, length - 1)
+        num1 = numbers1[index]
+        num2 = numbers2[index]
+        del numbers1[index]
+        del numbers2[index]
+        question = f"{num1} + {num2} = "
+        answer = num1 + num2
+        guess = input(question)
+        clear()
 
-            # Print the answer.
+        # Check if the user wants to go back.
+        if guess == "":
+            return None
+        
+        # Check if the guess is a string.
+        try:
+            guess = float(guess)
+        except:
             print(f"{question}{answer}")
-
-            # Display if the user is correct or incorrect.
-            if guess == answer:
-                print("\033[32mCorrect!\033[0m")
-            else:
-                print("\033[31mIncorrect!\033[0m")
-            
-            # Wait for user input.
+            print("\033[31mIncorrect!\033[0m")
             input()
             clear()
+            continue
+
+        # Print the answer.
+        print(f"{question}{answer}")
+
+        # Display if the user is correct or incorrect.
+        if guess == answer:
+            print("\033[32mCorrect!\033[0m")
+        else:
+            print("\033[31mIncorrect!\033[0m")
+        
+        # Wait for user input.
+        input()
+        clear()
 
 
 def incremental_subtraction(a, b):
     """Run the incremental_subtraction program."""
-    # Loop through the numbers.
+    # Create lists of pairs of numbers.
+    numbers1 = list()
+    numbers2 = list()
     for i in range(a, b + 1):
         for j in range(a, i + 1):
-            question = f"{i} - {j} = "
-            answer = i - j
-            guess = input(question)
-            clear()
-
-            # Check if the user wants to go back.
-            if guess == "":
-                return None
+            numbers1.append(i)
+            numbers2.append(j)
             
-            # Check if the guess is a string.
-            try:
-                guess = float(guess)
-            except:
-                print(f"{question}{answer}")
-                print("\033[31mIncorrect!\033[0m")
-                input()
-                clear()
-                continue
+    # Loop through the lists randomly.
+    length = len(numbers1)
+    for _ in range(length):
+        length = len(numbers1)
+        index = randint(0, length - 1)
+        num1 = numbers1[index]
+        num2 = numbers2[index]
+        del numbers1[index]
+        del numbers2[index]
+        question = f"{num1} - {num2} = "
+        answer = num1 - num2
+        guess = input(question)
+        clear()
 
-            # Print the answer.
+        # Check if the user wants to go back.
+        if guess == "":
+            return None
+        
+        # Check if the guess is a string.
+        try:
+            guess = float(guess)
+        except:
             print(f"{question}{answer}")
-
-            # Display if the user is correct or incorrect.
-            if guess == answer:
-                print("\033[32mCorrect!\033[0m")
-            else:
-                print("\033[31mIncorrect!\033[0m")
-            
-            # Wait for user input.
+            print("\033[31mIncorrect!\033[0m")
             input()
             clear()
+            continue
+
+        # Print the answer.
+        print(f"{question}{answer}")
+
+        # Display if the user is correct or incorrect.
+        if guess == answer:
+            print("\033[32mCorrect!\033[0m")
+        else:
+            print("\033[31mIncorrect!\033[0m")
+        
+        # Wait for user input.
+        input()
+        clear()
 
 
 def incremental_multiplication(a, b):
     """Run the incremental_multiplication program."""
-    # Loop through the numbers.
+    # Create lists of pairs of numbers.
+    numbers1 = list()
+    numbers2 = list()
     for i in range(a, b + 1):
         for j in range(a, b + 1):
-            question = f"{i} * {j} = "
-            answer = i * j
-            guess = input(question)
-            clear()
-
-            # Check if the user wants to go back.
-            if guess == "":
-                return None
+            numbers1.append(i)
+            numbers2.append(j)
             
-            # Check if the guess is a string.
-            try:
-                guess = float(guess)
-            except:
-                print(f"{question}{answer}")
-                print("\033[31mIncorrect!\033[0m")
-                input()
-                clear()
-                continue
+    # Loop through the lists randomly.
+    length = len(numbers1)
+    for _ in range(length):
+        length = len(numbers1)
+        index = randint(0, length - 1)
+        num1 = numbers1[index]
+        num2 = numbers2[index]
+        del numbers1[index]
+        del numbers2[index]
+        question = f"{num1} × {num2} = "
+        answer = num1 * num2
+        guess = input(question)
+        clear()
 
-            # Print the answer.
+        # Check if the user wants to go back.
+        if guess == "":
+            return None
+        
+        # Check if the guess is a string.
+        try:
+            guess = float(guess)
+        except:
             print(f"{question}{answer}")
-
-            # Display if the user is correct or incorrect.
-            if guess == answer:
-                print("\033[32mCorrect!\033[0m")
-            else:
-                print("\033[31mIncorrect!\033[0m")
-            
-            # Wait for user input.
+            print("\033[31mIncorrect!\033[0m")
             input()
             clear()
+            continue
+
+        # Print the answer.
+        print(f"{question}{answer}")
+
+        # Display if the user is correct or incorrect.
+        if guess == answer:
+            print("\033[32mCorrect!\033[0m")
+        else:
+            print("\033[31mIncorrect!\033[0m")
+        
+        # Wait for user input.
+        input()
+        clear()
 
 
 def incremental_division(a, b):
     """Run the incremental_division program."""
     # Loop through the numbers.
+    # Create lists of pairs of numbers.
+    numbers1 = list()
+    numbers2 = list()
     for i in range(a, b + 1):
         for j in range(a, i + 1):
-            question = f"{i} ÷ {j} = "
-            guess = input(question)
-            clear()
-
-            # Check if the user wants to go back.
-            if guess == "":
-                return None
+            numbers1.append(i)
+            numbers2.append(j)
             
-            # Perform the appropriate division problem.
-            # Indeterminate.
-            if i == 0 and j == 0:
-                answer = "Indeterminate"
-                print(f"{question}{answer}")
-                if guess.lower() == answer.lower():
-                    print("\033[32mCorrect!\033[0m")
-                else:
-                    print("\033[31mIncorrect!\033[0m")
-            # Undefined.
-            elif j == 0:
-                answer = "Undefined"
-                print(f"{question}{answer}")
-                if guess.lower() == answer.lower():
-                    print("\033[32mCorrect!\033[0m")
-                else:
-                    print("\033[31mIncorrect!\033[0m")
-            # Not indeterminate or undefined.
-            else:
-                # Decimal.
-                try:
-                    answer = rounded(i / j)
-                    guess = rounded(float(guess))
-                    print(f"{question}{answer}")
-                    if guess == answer:
-                        print("\033[32mCorrect!\033[0m")
-                    else:
-                        print("\033[31mIncorrect!\033[0m")
-                # Quotient and remainder.
-                except:
-                    answer = str(i // j) + " r " + str(i % j)
-                    print(f"{question}{answer}")
-                    if guess.replace(" ", "") == answer.replace(" ", ""):
-                        print("\033[32mCorrect!\033[0m")
-                    else:
-                        print("\033[31mIncorrect!\033[0m")
+    # Loop through the lists randomly.
+    length = len(numbers1)
+    for _ in range(length):
+        length = len(numbers1)
+        index = randint(0, length - 1)
+        num1 = numbers1[index]
+        num2 = numbers2[index]
+        del numbers1[index]
+        del numbers2[index]
+        question = f"{num1} ÷ {num2} = "
+        guess = input(question)
+        clear()
 
-            # Wait for user input.
-            input()
-            clear()
+        # Check if the user wants to go back.
+        if guess == "":
+            return None
+        
+        # Perform the appropriate division problem.
+        # Indeterminate.
+        if num1 == 0 and num2 == 0:
+            answer = "Indeterminate"
+            print(f"{question}{answer}")
+            if guess.lower() == answer.lower():
+                print("\033[32mCorrect!\033[0m")
+            else:
+                print("\033[31mIncorrect!\033[0m")
+        # Undefined.
+        elif num2 == 0:
+            answer = "Undefined"
+            print(f"{question}{answer}")
+            if guess.lower() == answer.lower():
+                print("\033[32mCorrect!\033[0m")
+            else:
+                print("\033[31mIncorrect!\033[0m")
+        # Not indeterminate or undefined.
+        else:
+            # Decimal.
+            try:
+                answer = rounded(num1 / num2)
+                guess = rounded(float(guess))
+                print(f"{question}{answer}")
+                if guess == answer:
+                    print("\033[32mCorrect!\033[0m")
+                else:
+                    print("\033[31mIncorrect!\033[0m")
+            # Quotient and remainder.
+            except:
+                answer = str(num1 // num2) + " r " + str(num1 % num2)
+                print(f"{question}{answer}")
+                if guess.replace(" ", "") == answer.replace(" ", ""):
+                    print("\033[32mCorrect!\033[0m")
+                else:
+                    print("\033[31mIncorrect!\033[0m")
+
+        # Wait for user input.
+        input()
+        clear()
 
 
 def incremental_square(a, b):
     """Run the incremental_square program."""
-    # Loop through the numbers.
+    # Create lists of pairs of numbers.
+    numbers = list()
     for i in range(a, b + 1):
-        question = f"{i}² = "
-        answer = i ** 2
+        numbers.append(i)
+            
+    # Loop through the lists randomly.
+    length = len(numbers)
+    for _ in range(length):
+        length = len(numbers)
+        index = randint(0, length - 1)
+        num = numbers[index]
+        del numbers[index]
+        question = f"{num}² = "
+        answer = num ** 2
         guess = input(question)
         clear()
 
