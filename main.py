@@ -573,7 +573,7 @@ def calculator():
         if "^" in expression:
             expression = expression.replace("^", "**")
         
-        # Calculate and display the answer
+        # Calculate and display the answer.
         try:
             answer = eval(expression)
             print(f"\033[32m{answer}\033[0m")
