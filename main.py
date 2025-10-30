@@ -21,7 +21,7 @@ def addition(a, b, constant=False):
     if constant:
         while True:
             num1 = input("Constant: ")
-            if num1 == "":
+            if num1 == "q":
                 clear()
                 return None
             try:
@@ -43,18 +43,14 @@ def addition(a, b, constant=False):
         clear()
 
         # Check if the user wants to go back.
-        if guess == "":
+        if guess == "q":
             break
 
         # Check if the guess is a string.
         try:
             guess = float(guess)
         except:
-            print(f"{question}{answer}")
-            print("\033[31mIncorrect!\033[0m")
-            input()
-            clear()
-            continue
+            pass
 
         # Print the answer.
         print(f"{question}{answer}")
@@ -66,8 +62,10 @@ def addition(a, b, constant=False):
             print("\033[31mIncorrect!\033[0m")
         
         # Wait for user input.
-        input()
+        exit = input()
         clear()
+        if exit == "q":
+            break
 
 
 def subtraction(a, b, constant=False):
@@ -76,7 +74,7 @@ def subtraction(a, b, constant=False):
     if constant:
         while True:
             num1 = input("Constant: ")
-            if num1 == "":
+            if num1 == "q":
                 clear()
                 return None
             try:
@@ -98,18 +96,14 @@ def subtraction(a, b, constant=False):
         clear()
 
         # Check if the user wants to go back.
-        if guess == "":
+        if guess == "q":
             break
 
         # Check if the guess is a string.
         try:
             guess = float(guess)
         except:
-            print(f"{question}{answer}")
-            print("\033[31mIncorrect!\033[0m")
-            input()
-            clear()
-            continue
+            pass
 
         # Print the answer.
         print(f"{question}{answer}")
@@ -121,8 +115,10 @@ def subtraction(a, b, constant=False):
             print("\033[31mIncorrect!\033[0m")
         
         # Wait for user input.
-        input()
+        exit = input()
         clear()
+        if exit == "q":
+            break
 
 
 def multiplication(a, b, constant=False):
@@ -131,7 +127,7 @@ def multiplication(a, b, constant=False):
     if constant:
         while True:
             num1 = input("Constant: ")
-            if num1 == "":
+            if num1 == "q":
                 clear()
                 return None
             try:
@@ -153,18 +149,14 @@ def multiplication(a, b, constant=False):
         clear()
 
         # Check if the user wants to go back.
-        if guess == "":
+        if guess == "q":
             break
 
         # Check if the guess is a string.
         try:
             guess = float(guess)
         except:
-            print(f"{question}{answer}")
-            print("\033[31mIncorrect!\033[0m")
-            input()
-            clear()
-            continue
+            pass
 
         # Print the answer.
         print(f"{question}{answer}")
@@ -176,8 +168,10 @@ def multiplication(a, b, constant=False):
             print("\033[31mIncorrect!\033[0m")
         
         # Wait for user input.
-        input()
+        exit = input()
         clear()
+        if exit == "q":
+            break
 
 
 def division(a, b, constant=False):
@@ -186,7 +180,7 @@ def division(a, b, constant=False):
     if constant:
         while True:
             num1 = input("Constant: ")
-            if num1 == "":
+            if num1 == "q":
                 clear()
                 return None
             try:
@@ -207,7 +201,7 @@ def division(a, b, constant=False):
         clear()
 
         # Check if the user wants to go back.
-        if guess == "":
+        if guess == "q":
             break
 
         # Perform the appropriate division problem.
@@ -248,8 +242,10 @@ def division(a, b, constant=False):
                     print("\033[31mIncorrect!\033[0m")
 
         # Wait for user input.
-        input()
+        exit = input()
         clear()
+        if exit == "q":
+            break
 
 
 def square(a, b):
@@ -263,18 +259,14 @@ def square(a, b):
         clear()
 
         # Check if the user wants to go back.
-        if guess == "":
+        if guess == "q":
             break
 
         # Check if the guess is a string.
         try:
             guess = float(guess)
         except:
-            print(f"{question}{answer}")
-            print("\033[31mIncorrect!\033[0m")
-            input()
-            clear()
-            continue
+            pass
 
         # Print the answer.
         print(f"{question}{answer}")
@@ -286,8 +278,10 @@ def square(a, b):
             print("\033[31mIncorrect!\033[0m")
         
         # Wait for user input.
-        input()
+        exit = input()
         clear()
+        if exit == "q":
+            break
 
 
 def incremental_addition(a, b):
@@ -314,18 +308,14 @@ def incremental_addition(a, b):
         clear()
 
         # Check if the user wants to go back.
-        if guess.lower() == "b":
+        if guess == "q":
             return None
         
         # Check if the guess is a string.
         try:
             guess = float(guess)
         except:
-            print(f"{question}{answer}")
-            print("\033[31mIncorrect!\033[0m")
-            input()
-            clear()
-            continue
+            pass
 
         # Print the answer.
         print(f"{question}{answer}")
@@ -337,8 +327,10 @@ def incremental_addition(a, b):
             print("\033[31mIncorrect!\033[0m")
         
         # Wait for user input.
-        input()
+        exit = input()
         clear()
+        if exit == "q":
+            break
 
 
 def incremental_subtraction(a, b):
@@ -365,18 +357,14 @@ def incremental_subtraction(a, b):
         clear()
 
         # Check if the user wants to go back.
-        if guess.lower() == "b":
+        if guess == "q":
             return None
         
         # Check if the guess is a string.
         try:
             guess = float(guess)
         except:
-            print(f"{question}{answer}")
-            print("\033[31mIncorrect!\033[0m")
-            input()
-            clear()
-            continue
+            pass
 
         # Print the answer.
         print(f"{question}{answer}")
@@ -388,8 +376,10 @@ def incremental_subtraction(a, b):
             print("\033[31mIncorrect!\033[0m")
         
         # Wait for user input.
-        input()
+        exit = input()
         clear()
+        if exit == "q":
+            break
 
 
 def incremental_multiplication(a, b):
@@ -416,18 +406,14 @@ def incremental_multiplication(a, b):
         clear()
 
         # Check if the user wants to go back.
-        if guess.lower() == "b":
+        if guess == "q":
             return None
         
         # Check if the guess is a string.
         try:
             guess = float(guess)
         except:
-            print(f"{question}{answer}")
-            print("\033[31mIncorrect!\033[0m")
-            input()
-            clear()
-            continue
+            pass
 
         # Print the answer.
         print(f"{question}{answer}")
@@ -439,8 +425,10 @@ def incremental_multiplication(a, b):
             print("\033[31mIncorrect!\033[0m")
         
         # Wait for user input.
-        input()
+        exit = input()
         clear()
+        if exit == "q":
+            break
 
 
 def incremental_division(a, b):
@@ -467,7 +455,7 @@ def incremental_division(a, b):
         clear()
 
         # Check if the user wants to go back.
-        if guess.lower() == "b":
+        if guess == "q":
             return None
         
         # Perform the appropriate division problem.
@@ -508,8 +496,10 @@ def incremental_division(a, b):
                     print("\033[31mIncorrect!\033[0m")
 
         # Wait for user input.
-        input()
+        exit = input()
         clear()
+        if exit == "q":
+            break
 
 
 def incremental_square(a, b):
@@ -531,18 +521,14 @@ def incremental_square(a, b):
         clear()
 
         # Check if the user wants to go back.
-        if guess.lower() == "b":
+        if guess == "q":
             return None
         
         # Check if the guess is a string.
         try:
             guess = float(guess)
         except:
-            print(f"{question}{answer}")
-            print("\033[31mIncorrect!\033[0m")
-            input()
-            clear()
-            continue
+            pass
 
         # Print the answer.
         print(f"{question}{answer}")
@@ -554,8 +540,10 @@ def incremental_square(a, b):
             print("\033[31mIncorrect!\033[0m")
         
         # Wait for user input.
-        input()
+        exit = input()
         clear()
+        if exit == "q":
+            break
 
 
 def calculator():
@@ -565,7 +553,7 @@ def calculator():
         expression = input()
 
         # Check if the user wants to go back.
-        if expression == "":
+        if expression == "q":
             clear()
             break
 
@@ -584,13 +572,17 @@ def calculator():
 def main():
     """Execute the program."""
     clear()
+    start = input("Type q to go back: ")
+    clear()
+    if start == "q":
+        return None
 
     while True:
         # Choose the minimum number.
         while True:
             a = input("Minimum: ")
             clear()
-            if a == "":
+            if a == "q":
                 return None
             try:
                 a = int(a)
@@ -603,7 +595,7 @@ def main():
             print(f"Minimum: {a}")
             b = input("Maximum: ")
             clear()
-            if b == "":
+            if b == "q":
                 break
             try:
                 b = int(b)
@@ -612,13 +604,13 @@ def main():
                 continue
         
         # Go back to the minimum number.
-        if b == "" or a > b:
+        if b == "q" or a > b:
             continue
 
         # Initialize the loop.
-        operator = " "
+        operator = ""
 
-        while operator != "":
+        while operator != "q":
             # Choose an operator.
             print("(1) Addition")
             print("(2) Subtraction")
