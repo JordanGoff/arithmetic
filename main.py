@@ -314,7 +314,7 @@ def incremental_addition(a, b):
         clear()
 
         # Check if the user wants to go back.
-        if guess == "":
+        if guess.lower() == "b":
             return None
         
         # Check if the guess is a string.
@@ -365,7 +365,7 @@ def incremental_subtraction(a, b):
         clear()
 
         # Check if the user wants to go back.
-        if guess == "":
+        if guess.lower() == "b":
             return None
         
         # Check if the guess is a string.
@@ -416,7 +416,7 @@ def incremental_multiplication(a, b):
         clear()
 
         # Check if the user wants to go back.
-        if guess == "":
+        if guess.lower() == "b":
             return None
         
         # Check if the guess is a string.
@@ -467,7 +467,7 @@ def incremental_division(a, b):
         clear()
 
         # Check if the user wants to go back.
-        if guess == "":
+        if guess.lower() == "b":
             return None
         
         # Perform the appropriate division problem.
@@ -531,7 +531,7 @@ def incremental_square(a, b):
         clear()
 
         # Check if the user wants to go back.
-        if guess == "":
+        if guess.lower() == "b":
             return None
         
         # Check if the guess is a string.
